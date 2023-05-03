@@ -34,3 +34,8 @@ Clone the repository using the following command:
 ```
 git clone https://github.com/nilabjasanyal/Hand-swipe.git
 ```
+
+Then install requirements.txt
+```
+pip install -r requirements.txt
+```
