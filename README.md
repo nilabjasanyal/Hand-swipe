@@ -5,7 +5,7 @@
 ![Mediapipe-0.9.3.0](https://img.shields.io/badge/Mediapipe-0.9.3.0-orange)
 ![Aspose-23.3.0](https://img.shields.io/badge/Aspose-23.3.0-b30018)
 
-Hand-Swipe is a smart presentation system that allows users to navigate through PowerPoint presentations using hand gestures. The system also includes an Air Canvas module that lets users draw using pre defined objects.Gesture controlled presentation is an exciting technology that has the potential to revolutionize the way we interact with presentations. With Python, OpenCV, and the HandTracking module, it is possible to create powerful and intuitive gesture-based interfaces for controlling presentations.
+Hand-Swipe is a smart presentation system that allows users to navigate through PowerPoint presentations using hand gestures. The system also includes an Air Canvas module that lets users draw using pre defined objects. Gesture controlled presentation is an exciting technology that has the potential to revolutionize the way we interact with presentations. With Python, OpenCV, and the HandTracking module, it is possible to create powerful and intuitive gesture-based interfaces for controlling presentations.
 
 ## Requirements
 
