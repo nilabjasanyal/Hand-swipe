@@ -8,10 +8,9 @@ def canvas(pathFullImage):
     air_canvas.draw(pathFullImage)
 # variables
 
-# def detection("PPT"):
 def detection(folderPath):
     width, height = 640, 480
-    folderPath = "PPT_IMG"
+    # folderPath = "PPT_IMG"
 
     # camera setup
     cap = cv2.VideoCapture(0)
@@ -44,8 +43,7 @@ def detection(folderPath):
         img = cv2.flip(img, 1)  # 1-horizontal,0-vertical
         pathFullImage = os.path.join(folderPath, pathImages[imgNumber])
         imgCurrent = cv2.imread(pathFullImage)
-        h, w, _ = imgCurrent.shape
-
+        
         hands, img = detector.findHands(img)
         cv2.line(img, (0, gestureThreshold), (width, gestureThreshold), (0, 255, 0), 5)
         print(annotationNumber)
@@ -87,20 +85,16 @@ def detection(folderPath):
             if fingers == [0, 1, 1, 0, 0]:
                 cv2.circle(imgCurrent, indexFinger, 12, (0, 0, 255), cv2.FILLED)
                 annotationStart = False
-                cap.release()
-                air_canvas.draw(pathFullImage)
+                # cv2.destroyAllWindows()
+
+
 
 
             # Gesture 4 - draw pointer
             if fingers == [0, 1, 0, 0, 0]:
-                if annotationStart is False:
-                    annotationStart = True
-                    annotationNumber += 1
-                    annotations.append([])
-                cv2.circle(imgCurrent, indexFinger, 12, (0, 0, 255), cv2.FILLED)
-                annotations[annotationNumber].append(indexFinger)
-            else:
-                annotationStart = False
+               annotationStart = False
+               cap.release()
+               canvas(pathFullImage)
 
             # Gesture 5 - erase
 
@@ -127,7 +121,6 @@ def detection(folderPath):
 
         # Adding web cam image on the slides
         imgSmall = cv2.resize(img, (ws, hs))
-        
         h, w, _ = imgCurrent.shape
         imgCurrent[0:hs, w - ws:w] = imgSmall
 
